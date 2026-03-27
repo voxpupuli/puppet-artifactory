@@ -180,7 +180,7 @@ Puppet::Type.newtype(:artifactory_yaml_file) do
 
   def generate
     file_opts = {
-      ensure: self[:ensure] == :absent ? :absent : :file
+      ensure: (self[:ensure] == :absent) ? :absent : :file,
     }
 
     %i[
@@ -221,6 +221,6 @@ Puppet::Type.newtype(:artifactory_yaml_file) do
       parameter(:key).sensitive = true
     end
 
-    super(sensitive_parameters)
+    super
   end
 end
