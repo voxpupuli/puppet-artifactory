@@ -125,12 +125,13 @@ class artifactory::config (
     $binary_store_content = file('artifactory/default-binarystore.xml')
   }
 
-  file { "${datadir}/etc/artifactory/binarystore.xml":
-    ensure  => file,
+  artifactory_xml_file { "${datadir}/etc/artifactory/binarystore.xml":
+    ensure  => present,
     owner   => 'artifactory',
     group   => 'artifactory',
     mode    => '0640',
-    content => $binary_store_content,
+    content => Sensitive($binary_store_content),
+    key     => $key,
   }
 
   $changes = $system_properties.map |$key, $value| {
