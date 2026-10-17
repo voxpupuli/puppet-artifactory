@@ -28,6 +28,7 @@
 #### Private Resource types
 
 * `artifactory_access_settings`: Generates a access.config.patch.yml file as needed using configuration values from `artifactory_access_setting` resources.
+* `artifactory_xml_file`: Used to generate the binarystore.xml file but replaces its content only if encrypted fields don't decrypt to strings matching the plaintext versions from `content`
 * `artifactory_yaml_file`: Used to generates the system.yaml file but replaces its content only if encrypted fields don't decrypt to strings matching the plaintext versions from `content`
 
 ## Classes
