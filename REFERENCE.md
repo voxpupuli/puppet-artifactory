@@ -279,4 +279,3 @@ Name of setting in dotted notation.
 ##### <a name="-artifactory_access_setting--value"></a>`value`
 
 The value of the setting
-
