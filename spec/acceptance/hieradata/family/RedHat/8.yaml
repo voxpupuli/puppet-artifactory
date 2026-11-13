@@ -1,0 +1,4 @@
+---
+# Artifactory needs a newer PostgreSQL than the EL8 default (10)
+postgresql::globals::manage_dnf_module: true
+postgresql::globals::version: '16'
