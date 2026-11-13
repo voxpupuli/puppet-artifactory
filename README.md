@@ -31,7 +31,7 @@ It has been developed for and tested with Artifactory 7 on RHEL 8, but should al
 
 ### What artifactory affects
 
-The module installs Artifactory 7 from RPM packages.
+The module installs Artifactory 7 from RPM (RedHat family) or DEB (Debian and Ubuntu) packages.
 It manages Artifactory's `system.yaml` configuration file, the `master.key` file, `binarystore.xml` and settings within the `artifactory.system.properties` file.
 
 It has been developed for use with `PostgreSQL` as Artifactory's backend database and will, by default, manage the creation of the database instance too.
@@ -45,7 +45,7 @@ Artifactory 7 includes its own Java distribution and JDBC drivers, such that you
 
 ### Beginning with artifactory
 
-The module has a single public class. At its simplest, and assuming your server has Internet access and is able to reach JFrog's public yum servers, you can simply include the base class to get a working installation.
+The module has a single public class. At its simplest, and assuming your server has Internet access and is able to reach JFrog's public yum/apt servers, you can simply include the base class to get a working installation.
 
 ```puppet
 include artifactory
@@ -58,9 +58,9 @@ In practice, there are several customisations you will probably want to make.
 
 The `edition` parameter defaults to `oss`.  It can be set to `pro` to install the commercial edition of Artifactory. The setting influences the repository configured when `manage_repo` is set to `true`, as well as the default for the `package_name` parameter.
 
-The `package_version` parameter can be used to specify an exact package version, (the RPM version), of Artifactory to install.
+The `package_version` parameter can be used to specify an exact package version, (the package version), of Artifactory to install.
 
-If you set `manage_repo` to `false`, the module will not configure the yum repository, but will still expect the appropriate package to be available.
+If you set `manage_repo` to `false`, the module will not configure the yum or apt repository, but will still expect the appropriate package to be available.
 
 #### PostgreSQL
 

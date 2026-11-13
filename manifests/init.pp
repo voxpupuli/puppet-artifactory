@@ -1,13 +1,13 @@
 # @summary Installs and configures Artifactory
 #
 # @param manage_repo
-#   Whether to manage the artifactory yum repository
+#   Whether to manage the artifactory yum (RedHat family) or apt (Debian family) repository
 # @param edition
 #   Controls which version of Artifactory is installed
 # @param package_name
 #   The Artifactory package name
 # @param package_version
-#   The RPM version of the Artifactory package, (or `latest`, `installed` etc.)
+#   The package version of the Artifactory package, (or `latest`, `installed` etc.)
 # @param db_type
 #   The database type. Artifactory works with other databases, but strongly recommends only using `postgresql`
 # @param db_host
